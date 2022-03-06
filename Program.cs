@@ -50,13 +50,13 @@ namespace DIO.Series
         {
             Console.WriteLine("Inserir nova série");
 
-            foreach (int i in Enum.GetValues(typeof(Gender)))
+            foreach (int i in Enum.GetValues(typeof(Genre)))
             {
-                Console.WriteLine($"{i} - {Enum.GetName(typeof(Gender), i)}");
+                Console.WriteLine($"{i} - {Enum.GetName(typeof(Genre), i)}");
             }
 
             Console.Write("Digite o gênero entre as opções acima: ");
-            int.TryParse(Console.ReadLine(), out int gender);
+            int.TryParse(Console.ReadLine(), out int genre);
 
             Console.Write("Digite o título da série: ");
             string title = Console.ReadLine();
@@ -69,7 +69,7 @@ namespace DIO.Series
 
             TVSeries tvSeries = new TVSeries(
                 id: repository.NextID(),
-                gender: (Gender)gender,
+                genre: (Genre)genre,
                 title: title,
                 year: year,
                 description: description
@@ -83,13 +83,13 @@ namespace DIO.Series
             Console.Write("Digite o id da série: ");
             int.TryParse(Console.ReadLine(), out int id);
 
-            foreach (int i in Enum.GetValues(typeof(Gender)))
+            foreach (int i in Enum.GetValues(typeof(Genre)))
             {
-                Console.WriteLine($"{i} - {Enum.GetName(typeof(Gender), i)}");
+                Console.WriteLine($"{i} - {Enum.GetName(typeof(Genre), i)}");
             }
             
             Console.Write("Digite o gênero entre as opções acima: ");
-            int.TryParse(Console.ReadLine(), out int gender);
+            int.TryParse(Console.ReadLine(), out int genre);
 
             Console.Write("Digite o título da série: ");
             string title = Console.ReadLine();
@@ -102,7 +102,7 @@ namespace DIO.Series
             
             TVSeries updatedTvSeries = new TVSeries(
                 id: id,
-                gender: (Gender)gender,
+                genre: (Genre)genre,
                 title: title,
                 year: year,
                 description: description
